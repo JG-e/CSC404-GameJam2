@@ -860,7 +860,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: aac4d1d56a0511446a4aacb332efdf74, type: 3}
+  m_audioClip: {fileID: 8300000, guid: edd084ed36ac93343be0eb3bb3e90f39, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -973,7 +973,7 @@ GameObject:
   - component: {fileID: 444018347}
   - component: {fileID: 444018346}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Names
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1306,6 +1306,22 @@ MonoBehaviour:
     message: Oh we know, but you've got a lot of explaining to do...
   - actorid: 1
     message: What do you mean?
+  - actorid: 0
+    message: Why don't you tell us what you know first.
+  - actorid: 1
+    message: Well I came to investigate screaming from my neighbours house...
+  - actorid: 1
+    message: But when I got here everything was already up in flames.
+  - actorid: 1
+    message: I heard someone running away though.
+  - actorid: 0
+    message: Likely story kid.
+  - actorid: 0
+    message: Your prints were all over the crime scene.
+  - actorid: 0
+    message: You're going to jail!!!
+  - actorid: 1
+    message: If it weren't for those meddling Players...
   actors:
   - name: Police
     sprite: {fileID: 0}

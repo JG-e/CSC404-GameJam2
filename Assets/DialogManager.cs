@@ -6,7 +6,6 @@ using TMPro;
 
 public class DialogManager : MonoBehaviour
 {
-    GameManager gameManager;
     public Image actorImage;
     public TMP_Text actorName;
     public TMP_Text messageText;
@@ -18,8 +17,6 @@ public class DialogManager : MonoBehaviour
     int activeMessage = 0;
     public void OpenDialog(Message[] messages, Actor[] actors)
     {
-        if (gameManager.touchedObjects) { }
-
         currentMessages = messages;
         currentActors = actors;
         activeMessage = 0;
@@ -50,12 +47,6 @@ public class DialogManager : MonoBehaviour
             Debug.Log("Conversation Ended");
             isActive = false;
         }
-    }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        gameManager = GameManager.instance;
     }
 
     // Update is called once per frame

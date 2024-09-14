@@ -6,15 +6,20 @@ public class DialogTrigger : MonoBehaviour
 {
     public Message[] messages;
     public Actor[] actors;
+    private int i = 0;
 
     public void StartDialogue()
     {
         FindObjectOfType<DialogManager>().OpenDialog(messages, actors);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        StartDialogue();
+        if (i == 0)
+        {
+            StartDialogue();
+            i++;
+        }
     }
 }
 
