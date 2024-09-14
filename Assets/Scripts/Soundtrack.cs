@@ -15,7 +15,7 @@ public class Soundtrack : MonoBehaviour
     {
         myAudioSource.clip = startSoundClip;
         myAudioSource.Play();
-        StartCoroutine(LoadSceneAfterSound("Interrogation"));
+        StartCoroutine(LoadSceneAfterSound("CrimeScene"));
     }
 
     // Update is called once per frame
