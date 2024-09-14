@@ -54,7 +54,11 @@ public class PlayerController : MonoBehaviour
 
     private void CharacterControllerMovement() {
         // Controls for character controller
-        move_speed=new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, gravity * Time.deltaTime, Input.GetAxis("Vertical") * speed * Time.deltaTime);
+        move_speed = transform.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        move_speed += transform.right * Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        move_speed.y += gravity;
+        move_speed.Normalize();
+        move_speed *= speed;
         if (controller.isGrounded) {
             move_speed.y = 0;
             if (Input.GetButtonDown("Jump")) {
