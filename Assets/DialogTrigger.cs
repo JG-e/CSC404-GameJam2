@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class DialogTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Message[] messages;
+    public Actor[] actors;
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[System.Serializable]
+public class Message
+{
+    public int actorid;
+    public string message;
+}
+
+[System.Serializable]
+public class Actor
+{
+    public string name;
+    public Sprite sprite;
 }
