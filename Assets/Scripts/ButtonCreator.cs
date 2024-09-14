@@ -1,10 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic; // For using Dictionary
 
 public class ButtonCreator : MonoBehaviour
 {
+    // Dictionary to track button presses
+    private Dictionary<string, bool> buttonPresses = new Dictionary<string, bool>();
+
     void Start()
     {
+        // Initialize button press states (all set to false initially)
+        buttonPresses.Add("Take Canister", false);
+        buttonPresses.Add("Notify Police", false);
+        buttonPresses.Add("Flee", false);
+
         // Create a Canvas if not already present
         Canvas canvas = FindObjectOfType<Canvas>();
         if (canvas == null)
@@ -69,5 +78,36 @@ public class ButtonCreator : MonoBehaviour
     void ButtonClicked(string buttonText)
     {
         Debug.Log(buttonText + " clicked!");
+
+        // Update the button press state
+        if (buttonPresses.ContainsKey(buttonText))
+        {
+            buttonPresses[buttonText] = true; // Mark as pressed
+        }
+
+        // Example: Check if all buttons have been pressed
+        if (AllButtonsPressed())
+        {
+            Debug.Log("All actions have been taken!");
+        }
+    }
+
+    // Check if all buttons have been pressed at least once
+    bool AllButtonsPressed()
+    {
+        foreach (var pressed in buttonPresses.Values)
+        {
+            if (!pressed)
+            {
+                return false; // If any button hasn't been pressed, return false
+            }
+        }
+        return true; // All buttons have been pressed
+    }
+
+    // You can add a method to get the state of any button later in the game
+    public bool HasButtonBeenPressed(string buttonText)
+    {
+        return buttonPresses.ContainsKey(buttonText) && buttonPresses[buttonText];
     }
 }
