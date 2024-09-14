@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     }
 
     IEnumerator LoadSceneAsync(string sceneName){
+        yield return new WaitForSeconds(0.2f);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         while(!asyncLoad.isDone){
             yield return null;
