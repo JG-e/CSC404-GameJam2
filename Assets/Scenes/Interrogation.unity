@@ -1317,8 +1317,10 @@ MonoBehaviour:
   - actorid: 0
     message: Likely story kid.
   - actorid: 0
-    message: Your prints were all over the crime scene.
+    message: You really thought you cuold swing us for a boozling bender.
   - actorid: 0
+    message: Your prints were all over the crime scene.
+  - actorid: 14
     message: You're going to jail!!!
   - actorid: 1
     message: If it weren't for those meddling Players...
