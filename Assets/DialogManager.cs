@@ -11,6 +11,7 @@ public class DialogManager : MonoBehaviour
     public TMP_Text actorName;
     public TMP_Text messageText;
     public RectTransform backgroundBox;
+    public static bool isActive = false;
 
     Message[] currentMessages;
     Actor[] currentActors;
@@ -22,6 +23,7 @@ public class DialogManager : MonoBehaviour
         currentMessages = messages;
         currentActors = actors;
         activeMessage = 0;
+        isActive = true;
 
         Debug.Log("Started Conversation! num messages = " + messages.Length);
         DisplayMessage();
@@ -36,17 +38,32 @@ public class DialogManager : MonoBehaviour
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite;
     }
+
+    public void NextMessage()
+    {
+        activeMessage++;
+        if (activeMessage < currentMessages.Length)
+        {
+            DisplayMessage();
+        } else
+        {
+            Debug.Log("Conversation Ended");
+            isActive = false;
+        }
+    }
     
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameManager.instance;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space) && isActive == true)
+        {
+            NextMessage();
+        }
     }
 }

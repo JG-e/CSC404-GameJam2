@@ -12,12 +12,10 @@ public class DialogTrigger : MonoBehaviour
         FindObjectOfType<DialogManager>().OpenDialog(messages, actors);
     }
 
-    private void Start()
+    private void OnTriggerEnter(Collider other)
     {
         StartDialogue();
     }
-
-
 }
 
 [System.Serializable]
@@ -33,3 +31,5 @@ public class Actor
     public string name;
     public Sprite sprite;
 }
+
+
