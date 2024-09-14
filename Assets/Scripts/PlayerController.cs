@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Vector3 move_speed;
     private int controllerFlag = 0; // 0 for rigidbody, 1 for character controller
+    public float gravity = -5.8f;
     
     // Start is called before the first frame update
     // This script is responsible for the movement of the player either using rigidbody 
@@ -52,7 +53,14 @@ public class PlayerController : MonoBehaviour
     }
 
     private void CharacterControllerMovement() {
-        move_speed=new Vector3(Input.GetAxis("Horizontal") * speed, 0, Input.GetAxis("Vertical") * speed);
-        controller.SimpleMove(move_speed);     
+        // Controls for character controller
+        move_speed=new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, gravity * Time.deltaTime, Input.GetAxis("Vertical") * speed * Time.deltaTime);
+        if (controller.isGrounded) {
+            move_speed.y = 0;
+            if (Input.GetButtonDown("Jump")) {
+                move_speed.y = jumpForce;
+            }
+        }
+        controller.Move(move_speed);     
     }
 }
