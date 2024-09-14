@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test Scene2.unity
     guid: 1af18a8df16e8483ab31fe1d3803028c
+  - enabled: 1
+    path: Assets/Scenes/Interrogation.unity
+    guid: f7e15525428ffb448945d51a8e30051e
+  - enabled: 1
+    path: Assets/Scenes/CrimeScene.unity
+    guid: 52316fa084b8c457990e21077fc05bd2
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 3da8ee9af2979404abff2ab426d88960
   m_configObjects: {}

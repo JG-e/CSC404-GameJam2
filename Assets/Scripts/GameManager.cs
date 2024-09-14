@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private enum Scenes{
         CrimeScene,
         InterrogationScene,
+        StartScene,
     }
 
     void Awake(){
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currScene = Scenes.CrimeScene;
+        currScene = Scenes.StartScene;
     }
 
     // Update is called once per frame
