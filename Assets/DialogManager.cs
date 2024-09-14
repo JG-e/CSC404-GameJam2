@@ -11,6 +11,7 @@ public class DialogManager : MonoBehaviour
     public TMP_Text messageText;
     public RectTransform backgroundBox;
     public static bool isActive = false;
+    public AudioSource audioSource;
 
     Message[] currentMessages;
     Actor[] currentActors;
@@ -55,6 +56,7 @@ public class DialogManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isActive == true)
         {
             NextMessage();
+            audioSource.Play();
         }
     }
 }
