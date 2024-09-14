@@ -7,7 +7,7 @@ public class CrimeSceneController : MonoBehaviour
     // Start is called before the first frame update
     GameManager gameManager;
     private float currentTime;
-    private float timeInCrimeScene = 120.0f;
+    private float timeInCrimeScene = 2.0f;
 
     private Image timerImage;
     void Start()
