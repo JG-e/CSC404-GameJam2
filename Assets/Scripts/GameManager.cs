@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
 
     private bool switchingScenes = false;
 
+    public bool notifiedPolice { get; set; }
+
+    public bool touchedObjects { get; set; }
+
     private enum Scenes{
         CrimeScene,
         InterrogationScene,
@@ -43,7 +47,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         switchingScenes = true;
-        StartCoroutine(LoadSceneAsync("Assets/Scenes/Test Scene2.unity"));
+        StartCoroutine(LoadSceneAsync("Assets/Scenes/Interrogation.unity"));
     }
 
     IEnumerator LoadSceneAsync(string sceneName){
