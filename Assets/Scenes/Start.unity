@@ -573,13 +573,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1816663145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3798e45d5158d45789183f38b4815074, type: 3}
+  m_Script: {fileID: 11500000, guid: c072bf0267111472fb0b32f8f4d53b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myAudioSource: {fileID: 1285335636}
-  startSoundClip: {fileID: 8300000, guid: a91b9c0b4b98d48dfb03533ee3f0e695, type: 3}
-  crimeSceneClip: {fileID: 8300000, guid: d6aa6f5d65f2b47d383e643ef9bf5d98, type: 3}
-  interrogationClip: {fileID: 8300000, guid: ccc9894f34df6457eb5c2688b196b747, type: 3}
+  startSoundClip: {fileID: 8300000, guid: 4cdbdd166eee84af4b806c00b091a1a9, type: 3}
+  crimeSceneClip: {fileID: 8300000, guid: a2c91fe5fe08d4aab9ddda87e8a3b21a, type: 3}
+  interrogationClip: {fileID: 8300000, guid: 14afcea4b862240e4928ff4d0ea8e237, type: 3}
 --- !u!4 &1816663147
 Transform:
   m_ObjectHideFlags: 0
