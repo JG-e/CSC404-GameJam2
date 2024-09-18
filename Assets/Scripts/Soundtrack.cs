@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,24 +9,43 @@ public class Soundtrack : MonoBehaviour
     public AudioClip crimeSceneClip;
     public AudioClip interrogationClip;
 
-    // Start is called before the first frame update
+    private string currentScene;
+
     void Start()
     {
+        DontDestroyOnLoad(gameObject); // This prevents the AudioSource from being destroyed when switching scenes
+
+        // Play the initial sound (startSoundClip) and load the first scene when it's done
         myAudioSource.clip = startSoundClip;
         myAudioSource.Play();
         StartCoroutine(LoadSceneAfterSound("CrimeScene"));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     IEnumerator LoadSceneAfterSound(string sceneName)
     {
-        // Wait for the audio to finish playing
-        yield return new WaitForSeconds(startSoundClip.length);
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        // Wait for the audio clip to finish
+        yield return new WaitForSeconds(myAudioSource.clip.length);
+        
+        // Load the target scene
+        SceneManager.LoadScene(sceneName);
+        
+        // Once the scene is loaded, play the corresponding clip
+        currentScene = sceneName;
+        SwitchMusicForScene();
+    }
+
+    void SwitchMusicForScene()
+    {
+        if (currentScene == "CrimeScene")
+        {
+            myAudioSource.clip = crimeSceneClip;
+            myAudioSource.Play();
+            StartCoroutine(LoadSceneAfterSound("Interrogation")); // After CrimeScene is done, move to Interrogation
+        }
+        else if (currentScene == "Interrogation")
+        {
+            myAudioSource.clip = interrogationClip;
+            myAudioSource.Play();
+        }
     }
 }
