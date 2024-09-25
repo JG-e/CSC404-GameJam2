@@ -16,10 +16,12 @@ public class GameManager : MonoBehaviour
 
     public bool touchedObjects { get; set; }
 
+    private int interactionCount = 0 ;
+
     private enum Scenes{
         CrimeScene,
-        InterrogationScene,
-        StartScene,
+        Interrogation,
+        Intro,
     }
 
     void Awake(){
@@ -34,7 +36,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currScene = Scenes.StartScene;
+        currScene = Scenes.Intro;
     }
 
     // Update is called once per frame
@@ -56,5 +58,18 @@ public class GameManager : MonoBehaviour
         while(!asyncLoad.isDone){
             yield return null;
         }
+    }
+
+    // Method to increment interaction count
+    public void AddInteraction()
+    {
+        interactionCount++;
+        Debug.Log("Interaction Count: " + interactionCount);
+    }
+
+    // Method to get the interaction count
+    public int GetInteractionCount()
+    {
+        return interactionCount;
     }
 }

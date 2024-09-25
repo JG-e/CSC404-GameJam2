@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class DialogManager : MonoBehaviour
 
     Message[] currentMessages;
     Actor[] currentActors;
-    int activeMessage = 0;
+    public int activeMessage = 0;
     public void OpenDialog(Message[] messages, Actor[] actors)
     {
         currentMessages = messages;
@@ -46,6 +47,12 @@ public class DialogManager : MonoBehaviour
         {
             Debug.Log("Conversation Ended");
             isActive = false;
+
+            int interactionCount = GameManager.instance.GetInteractionCount();
+            if (interactionCount == 0)
+            {
+                SceneManager.LoadScene("CrimeScene");
+            }
         }
     }
 
