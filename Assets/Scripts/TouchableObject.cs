@@ -44,7 +44,9 @@ public class TouchableObject : MonoBehaviour
     private void Interact()
     {
         // Define what happens when the player interacts
-        interactionMessageText.text = afterInteractionMessage; // Use the customizable interaction message
+        interactionMessageText.text = afterInteractionMessage;
+        // Notify the GameManager that an interaction has occurred
+        GameManager.instance.AddInteraction();
     }
 
     private void ShowInteractionText()

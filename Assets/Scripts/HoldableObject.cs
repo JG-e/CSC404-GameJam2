@@ -44,6 +44,8 @@ public class HoldableObject : MonoBehaviour
     {
         // Define what happens when the player interacts
         interactionMessageText.text = "You're now holding the " + gameObject.name + ".";
+        // Notify the GameManager that an interaction has occurred
+        GameManager.instance.AddInteraction();
         // Add interaction logic here (e.g., opening a dialog, picking up an item)
         gameObject.SetActive(false);
     }

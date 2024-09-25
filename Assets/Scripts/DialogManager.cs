@@ -47,7 +47,12 @@ public class DialogManager : MonoBehaviour
         {
             Debug.Log("Conversation Ended");
             isActive = false;
-            SceneManager.LoadScene("CrimeScene");
+
+            int interactionCount = GameManager.instance.GetInteractionCount();
+            if (interactionCount == 0)
+            {
+                SceneManager.LoadScene("CrimeScene");
+            }
         }
     }
 
