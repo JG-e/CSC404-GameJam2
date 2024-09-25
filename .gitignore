@@ -70,3 +70,13 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Unity Resource Packs
+/[Aa]ssets/_TerrainAutoUpgrade
+/[Aa]ssets/ARCADE - FREE Racing Car
+/[Aa]ssets/Fantasy Forest Environment Free Sample
+/[Aa]ssets/Forest Environment - Dynamic Nature
+/[Aa]ssets/TerrainSampleAssets
+/[Aa]ssets/HDRPDefaultResources
+
+.fake
