@@ -24,11 +24,17 @@ public class CameraSwitcher : MonoBehaviour
     void Update()
     {
         // Check if we're on the second message
-        if (dialogManager != null && dialogManager.activeMessage == 1)
+        if (dialogManager != null && dialogManager.activeMessage == 2)
         {
             // Switch to the alternate camera
             SwitchToAltCamera();
         }
+        if (dialogManager != null && DialogManager.isActive == false)
+        {
+            // Switch to the alternate camera
+            SceneManager.LoadScene("CrimeScene");
+        }
+        
     }
 
     void SwitchToAltCamera()
