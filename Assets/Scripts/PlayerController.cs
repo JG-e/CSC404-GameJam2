@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     private CharacterController controller;
+	[SerializeField]
     private Vector3 move_speed;
     private int controllerFlag = 0; // 0 for rigidbody, 1 for character controller
     public float gravity = -5.8f;
@@ -67,4 +68,6 @@ public class PlayerController : MonoBehaviour
         }
         controller.Move(move_speed);     
     }
+
+	
 }
